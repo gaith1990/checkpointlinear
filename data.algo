@@ -1,0 +1,97 @@
+//*première partie
+/*première méthode*/
+ALGORITHM 
+VAR
+st1 : ARRAY_OF INTEGER ;
+st2 : ARRAY_OF INTEGER ;
+sum : INTEGER:=0
+    
+BEGIN
+    FOR i FROM 0 TO st1.length-1 STEP step  DO
+    FOR j FROM 0 TO st1.length-1 STEP step  DO
+        IF (st1[i]=st2[i]) THEN break
+        else sum=sum+st1[i]
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO st1.length-1 STEP step  DO
+    FOR j FROM 0 TO st2.length-1 STEP step  DO
+        IF (st1[i]=st2[i]) THEN break
+        else sum=sum+st2[i]
+        END_IF
+    END_FOR
+      write(sum)  
+
+END
+/*deuxième méthode*/
+ALGORITHM algorithm_name
+VAR
+st1 : ARRAY_OF INTEGER ;
+st2 : ARRAY_OF INTEGER ;
+sum : INTEGER:=0  
+const:integer 
+tab:ARRAY_OF integer
+HASH_TABLE<INTEGER,INTEGER>
+BEGIN
+FOR i FROM 0 TO st1.length-1 STEP step  DO
+htab.insert(st1[i],1)
+END_FOR
+FOR i FROM 0 TO st2.length-1 STEP step  DO
+IF (htab.lookup(st2[i])=true) 
+THEN
+    const=htab.get(st2[i]+1)
+    htab.insert(st2[i],const)
+    else htan.insert(st2[i],1)
+END_IF
+END_FOR
+tab:=htab.getkeys
+FOR i FROM 0 TO tab.length-1 STEP step  DO
+   if (htab.get(tab[i]=1)) THEN sum= sum+tab[i]
+   END_IF
+END_FOR
+Write(sum)
+END
+//*deuxième partie
+/*première méthode*/
+ALGORITHM 
+VAR
+st1 : ARRAY_OF INTEGER ;
+st2 : ARRAY_OF INTEGER ;
+sum : INTEGER:=0
+BEGIN
+    FOR i FROM 0 TO ST1.length-1 STEP step  DO
+    FOR j FROM 0 TO st2.length-1 STEP step  DO
+        IF (st1[i]=st2[j]) THEN
+            sum=sum+2*st1[i]
+        END_IF
+    END_FOR
+    END_FOR
+    write(sum)
+END
+/*deuxième méthode*/
+ALGORITHM algorithm_name
+VAR
+st1 : ARRAY_OF INTEGER ;
+st2 : ARRAY_OF INTEGER ;
+sum : INTEGER:=0  
+const:integer 
+tab:ARRAY_OF integer
+HASH_TABLE<INTEGER,INTEGER>
+BEGIN
+FOR i FROM 0 TO st1.length-1 STEP step  DO
+htab.insert(st1[i],1)
+END_FOR
+FOR i FROM 0 TO st2.length-1 STEP step  DO
+IF (htab.lookup(st2[i])=true) 
+THEN
+    const=htab.get(st2[i]+1)
+    htab.insert(st2[i],const)
+    else htan.insert(st2[i],1)
+END_IF
+END_FOR
+tab:=htab.getkeys()
+FOR i FROM 0 TO tab.length-1 STEP step  DO
+   if (htab.get(tab[i]=2)) THEN sum= sum+tab[i]*2
+   END_IF
+END_FOR
+Write(sum)
+END
